@@ -22,6 +22,9 @@ func (c *CargoService) InputItem(item model.Item) bool {
 	}
 
 	if item.Type == "L" {
+		item.Volume.Height = 1
+		item.Volume.Length = 1
+		item.Volume.Width = 1
 		err = c.tempIsOk(item)
 		if err != nil {
 			fmt.Println(err)
